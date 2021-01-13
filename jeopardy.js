@@ -53,7 +53,7 @@ async function getCategory(catId) {
     
     for (let id of catId) {
         let category = {}
-        const res = await axios.get(`http://jservice.io/api/category?id=${id}`)
+        const res = await axios.get(`https://jservice.io/api/category?id=${id}`)
         category.title = res.data.title
         category.clues = res.data.clues.map(function(val) {
             return {question: val.question, answer: (val.answer = (val.answer.includes("<i>") ? val.answer.slice(3,-4):val.answer)), showing: null}
